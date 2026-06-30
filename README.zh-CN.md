@@ -2,9 +2,11 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-一个用于维护项目本地长期记忆系统的 Codex skill。
+一个用于项目开发场景的 Codex 记忆管理 skill。
 
-这个 skill 帮助 Codex 保存和检索项目上下文，同时避免把整个记忆库一次性加载进上下文。它使用有边界的 `project_memory/index.md` 作为路由索引，使用 `project_memory/handoff.md` 作为快速恢复入口，并且只在需要时读取详细记忆文件。
+这个 skill 帮助 Codex 和其他编程智能体记住整个软件项目的细节，包括历史决策、当前进度、已知 bug、API 契约、常用命令、环境说明和交接上下文。它的目标是解决一个常见问题：每次新开 Codex 对话时，智能体容易忘记之前的对话进度和项目背景。
+
+记忆内容会以普通 Markdown 文件的形式保存在项目内的 `project_memory/` 目录下，因此开发者可以直接查看、编辑、审阅并纳入版本管理。Codex 会使用有边界的 `project_memory/index.md` 作为路由索引，使用 `project_memory/handoff.md` 快速恢复最近的项目状态，并且只在需要时读取详细记忆文件。
 
 ## 功能
 

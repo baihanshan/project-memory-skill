@@ -2,9 +2,11 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-A Codex skill for maintaining a project-local long-term memory system.
+A Codex skill for maintaining project development memory across conversations.
 
-This skill helps Codex preserve and retrieve project context without loading the entire memory base into context. It uses a bounded `project_memory/index.md` and a fast-resume `project_memory/handoff.md`, then reads detailed memory files only when needed.
+This skill helps Codex and other coding agents remember the details of a software project: prior decisions, current progress, known bugs, API contracts, commands, environment notes, and handoff context. It is designed to prevent the common problem where a new Codex conversation starts without enough memory of previous work.
+
+The memory is stored inside the project as plain Markdown files under `project_memory/`, so developers can inspect, edit, review, and version-control the memory directly. Codex uses a bounded `project_memory/index.md` as a routing layer and a fast-resume `project_memory/handoff.md` to quickly recover the latest project state, then reads detailed memory files only when needed.
 
 ## Features
 
